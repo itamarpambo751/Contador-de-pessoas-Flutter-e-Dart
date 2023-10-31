@@ -19,6 +19,19 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   int _peoples = 0;
+  String _text = "Pode Entrar!";
+
+  void _setPeople(int number) {
+    setState(() {
+      _peoples+=number;
+
+      if (_peoples == 10) {
+        _text = "Restaurante Cheio!";
+      } else {
+        _text = "Pode Entrar!";
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +42,7 @@ class _HomeState extends State<Home> {
           fit: BoxFit.cover,
           height: 1000.0,
         ),
-         Column(
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget> [
             Text("Pessoas: $_peoples", 
@@ -41,10 +54,10 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _peoples+=1;
-                      });
+                    onPressed: () { 
+                      if (_peoples < 10) {
+                        _setPeople(1);
+                      } 
                     },
                     child: const Text("Adicionar"),
                   ),
@@ -54,9 +67,7 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_peoples > 0) {
-                        setState(() {
-                          _peoples+=-1;
-                        });
+                        _setPeople(-1);  
                       }
                     },
                     child: const Text("Remover"),
@@ -64,8 +75,8 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            const Text("Pode entrar", 
-              style: TextStyle(
+            Text(_text, 
+              style: const TextStyle(
                 color: Colors.blue, 
                 fontStyle: FontStyle.italic,
                 fontSize: 30.0
