@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-
+void _onPressed () {
+  print("Adicionar");
+}
 void main() async {
   runApp(const MaterialApp(
     title: "Contador de Pessoas",
@@ -9,6 +11,10 @@ void main() async {
       children: <Widget> [
         Text("Pessoas: 0", 
           style: TextStyle(color: Colors.blue),
+        ),
+        ElevatedButton(
+          onPressed:_onPressed,
+          child: Text("Adicionar"),
         ),
         Text("Pode entrar", 
           style: TextStyle(
