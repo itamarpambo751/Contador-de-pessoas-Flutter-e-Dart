@@ -15,13 +15,19 @@ void main() async {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed:_onPressed,
-              child: Text("Adicionar"),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                onPressed:_onPressed,
+                child: Text("Adicionar"),
+              ),
             ),
-            ElevatedButton(
-              onPressed:_onPressed,
-              child: Text("Remover"),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                onPressed:_onPressed,
+                child: Text("Remover"),
+              ),
             ),
           ],
         ),
