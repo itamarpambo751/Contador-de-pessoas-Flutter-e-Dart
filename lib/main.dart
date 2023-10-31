@@ -12,9 +12,18 @@ void main() async {
         Text("Pessoas: 0", 
           style: TextStyle(color: Colors.blue),
         ),
-        ElevatedButton(
-          onPressed:_onPressed,
-          child: Text("Adicionar"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed:_onPressed,
+              child: Text("Adicionar"),
+            ),
+            ElevatedButton(
+              onPressed:_onPressed,
+              child: Text("Remover"),
+            ),
+          ],
         ),
         Text("Pode entrar", 
           style: TextStyle(
