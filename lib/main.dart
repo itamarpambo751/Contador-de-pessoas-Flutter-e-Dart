@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 
-void _onPressed () {
-  print("Adicionar");
-}
+void _onPressed () {}
 void main() async {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: "Contador de Pessoas",
-    home: Stack(
+    home: Home()));
+}
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
       children: <Widget> [
         Image.asset(
           "images/restaurant.webp",
@@ -48,6 +59,6 @@ void main() async {
           ],
         ),
       ],
-    )
-  ));
+    );
+  }
 }
