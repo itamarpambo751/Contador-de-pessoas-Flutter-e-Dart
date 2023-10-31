@@ -53,9 +53,11 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        _peoples+=-1;
-                      });
+                      if (_peoples > 0) {
+                        setState(() {
+                          _peoples+=-1;
+                        });
+                      }
                     },
                     child: const Text("Remover"),
                   ),
