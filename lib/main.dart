@@ -4,41 +4,50 @@ void _onPressed () {
   print("Adicionar");
 }
 void main() async {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     title: "Contador de Pessoas",
-    home: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    home: Stack(
       children: <Widget> [
-        Text("Pessoas: 0", 
-          style: TextStyle(color: Colors.blue),
+        Image.asset(
+          "images/restaurant.webp",
+          fit: BoxFit.cover,
+          height: 1000.0,
         ),
-        Row(
+        const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: ElevatedButton(
-                onPressed:_onPressed,
-                child: Text("Adicionar"),
-              ),
+          children: <Widget> [
+            Text("Pessoas: 0", 
+              style: TextStyle(color: Colors.blue),
             ),
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: ElevatedButton(
-                onPressed:_onPressed,
-                child: Text("Remover"),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ElevatedButton(
+                    onPressed:_onPressed,
+                    child: Text("Adicionar"),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ElevatedButton(
+                    onPressed:_onPressed,
+                    child: Text("Remover"),
+                  ),
+                ),
+              ],
             ),
+            Text("Pode entrar", 
+              style: TextStyle(
+                color: Colors.blue, 
+                fontStyle: FontStyle.italic,
+                fontSize: 30.0
+              ),
+            )
           ],
         ),
-        Text("Pode entrar", 
-          style: TextStyle(
-            color: Colors.blue, 
-            fontStyle: FontStyle.italic,
-            fontSize: 30.0
-          ),
-        )
       ],
-    ),
+    )
   ));
 }
