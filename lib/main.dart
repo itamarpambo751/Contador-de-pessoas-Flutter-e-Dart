@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 void _onPressed () {}
 void main() async {
+  //Visto que Home é statefulWidget, podemos dizer q o 
+  //App não busca dados em tempo de execção sendo que 
+  //os valores em home são dinâmicos
   runApp(const MaterialApp(
     title: "Contador de Pessoas",
     home: Home()));
