@@ -1,4 +1,4 @@
-# new_flutter_project
+# People counter
 
 A new Flutter project.
 
